@@ -18,6 +18,7 @@ class FooBarQuixService {
         for( number in numbers){
             if(number.equals("3")) return "Foo";
             if(number.equals("5")) return "Bar";
+            if(number.equals("7")) return "Qix";
         }
 
         if(isDivisible(result)) return inputNumber.toString()
