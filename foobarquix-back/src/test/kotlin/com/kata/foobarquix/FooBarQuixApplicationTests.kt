@@ -15,7 +15,7 @@ class FooBarQuixApplicationTests {
 	}
 
 	@Test
-	fun fooBarQuixNumber1shouldReturn1() {
+	fun should_return_input_as_string() {
 		assertEquals("1", fooBarQuixService.convertNumber(1))
 	}
 }
