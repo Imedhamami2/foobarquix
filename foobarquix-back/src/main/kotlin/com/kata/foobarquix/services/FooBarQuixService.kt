@@ -17,6 +17,7 @@ class FooBarQuixService {
         val  numbers = inputNumber.toString().split("");
         for( number in numbers){
             if(number.equals("3")) return "Foo";
+            if(number.equals("5")) return "Bar";
         }
 
         if(isDivisible(result)) return inputNumber.toString()
