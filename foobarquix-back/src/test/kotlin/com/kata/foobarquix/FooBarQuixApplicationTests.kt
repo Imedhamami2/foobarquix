@@ -33,6 +33,6 @@ class FooBarQuixApplicationTests {
 
 	@Test
 	fun should_foo_when_input_is_divisible_by_7(){
-		assertEquals("Qix", fooBarQuixService.convertNumber(14));
+		assertEquals("Quix", fooBarQuixService.convertNumber(14));
 	}
 }

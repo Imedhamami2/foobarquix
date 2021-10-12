@@ -4,12 +4,17 @@ import org.springframework.stereotype.Component
 
 @Component
 class FooBarQuixService {
+    private val divisors = mapOf(3 to "Foo", 5 to "Bar", 7 to "Quix")
 
     fun convertNumber(inputNumber: Int): String {
-        if(inputNumber%3==0) return "Foo";
-        if(inputNumber%5==0) return "Bar";
-        if(inputNumber%7==0) return "Qix";
-        return inputNumber.toString();
+
+        for (key in divisors.keys) {
+            if (inputNumber % key == 0) {
+                return divisors[key].toString()
+            }
+        }
+
+        return inputNumber.toString()
     }
 
 }
