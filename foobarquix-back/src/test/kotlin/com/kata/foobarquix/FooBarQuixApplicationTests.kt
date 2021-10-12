@@ -54,5 +54,10 @@ class FooBarQuixApplicationTests {
 		assertEquals("Bar", fooBarQuixService.convertNumber(51));
 
 	}
+	@Test
+	fun should_replace_7_by_Qix(){
+		assertEquals("Qix", fooBarQuixService.convertNumber(71));
+
+	}
 
 }
