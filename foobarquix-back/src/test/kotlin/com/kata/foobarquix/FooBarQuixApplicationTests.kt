@@ -48,4 +48,11 @@ class FooBarQuixApplicationTests {
 		assertEquals("Foo", fooBarQuixService.convertNumber(13));
 
 	}
+
+	@Test
+	fun should_replace_5_by_Bar(){
+		assertEquals("Bar", fooBarQuixService.convertNumber(51));
+
+	}
+
 }
