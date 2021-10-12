@@ -9,16 +9,20 @@ class FooBarQuixService {
     fun convertNumber(inputNumber: Int): String {
         val result = StringBuilder()
 
+        val inputAsString: String = inputNumber.toString()
+
         for (key in divisors.keys) {
             if (inputNumber % key == 0 ) {
                 result.append( divisors[key])
             }
         }
-        val  numbers = inputNumber.toString().split("");
-        for( number in numbers){
-            if(number.equals("3")) return "Foo";
-            if(number.equals("5")) return "Bar";
-            if(number.equals("7")) return "Qix";
+
+        for (element in inputAsString) {
+            val digitAsString = element.toString()
+            val key = Integer.valueOf(digitAsString)
+            if (divisors.keys.contains(key)) {
+                result.append( divisors[key])
+            }
         }
 
         if(isDivisible(result)) return inputNumber.toString()

@@ -17,7 +17,6 @@ class FooBarQuixApplicationTests {
 	@Test
 	fun should_return_input_as_string() {
 		assertEquals("1", fooBarQuixService.convertNumber(1))
-		assertEquals("13", fooBarQuixService.convertNumber(13))
 
 	}
 
@@ -38,9 +37,9 @@ class FooBarQuixApplicationTests {
 
 	@Test
 	fun should_return_combination_of_foo_bar_qix(){
-		assertEquals("FooBar",fooBarQuixService.convertNumber(3*5));
-		assertEquals("BarQuix", fooBarQuixService.convertNumber(5*7));
-		assertEquals("FooBarQuix", fooBarQuixService.convertNumber(3*5*7));
+		assertEquals("FooBarBar",fooBarQuixService.convertNumber(15));
+		assertEquals("BarQuixFooBar", fooBarQuixService.convertNumber(5*7));
+		assertEquals("FooBarQuixBar", fooBarQuixService.convertNumber(3*5*7));
 	}
 
 	@Test
@@ -51,12 +50,12 @@ class FooBarQuixApplicationTests {
 
 	@Test
 	fun should_replace_5_by_Bar(){
-		assertEquals("Bar", fooBarQuixService.convertNumber(51));
+		assertEquals("FooBar", fooBarQuixService.convertNumber(51));
 
 	}
 	@Test
-	fun should_replace_7_by_Qix(){
-		assertEquals("Qix", fooBarQuixService.convertNumber(71));
+	fun should_replace_7_by_Quix(){
+		assertEquals("Quix", fooBarQuixService.convertNumber(71));
 
 	}
 
