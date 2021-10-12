@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 class FooBarQuixService {
 
     fun convertNumber(inputNumber: Int): String {
-        if(inputNumber==6) return "Foo";
+        if(inputNumber%3==0) return "Foo";
         return inputNumber.toString();
     }
 
