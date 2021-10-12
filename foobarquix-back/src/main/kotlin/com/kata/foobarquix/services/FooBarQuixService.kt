@@ -14,11 +14,13 @@ class FooBarQuixService {
                 result.append( divisors[key])
             }
         }
-        if(("").equals(result.toString())) return inputNumber.toString()
+        if(isDivisible(result)) return inputNumber.toString()
         return result.toString()
 
 
 
     }
+
+    private fun isDivisible(result: StringBuilder) = ("").equals(result.toString())
 
 }
