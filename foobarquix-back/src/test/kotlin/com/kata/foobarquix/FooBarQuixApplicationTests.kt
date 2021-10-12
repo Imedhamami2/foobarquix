@@ -20,4 +20,9 @@ class FooBarQuixApplicationTests {
 		assertEquals("13", fooBarQuixService.convertNumber(13))
 
 	}
+
+	@Test
+	fun should_foo_when_input_is_divisible_by_3(){
+		assertEquals("Foo", fooBarQuixService.convertNumber(6));
+	}
 }
