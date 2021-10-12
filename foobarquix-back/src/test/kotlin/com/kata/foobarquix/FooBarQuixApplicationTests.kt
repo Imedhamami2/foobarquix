@@ -38,8 +38,8 @@ class FooBarQuixApplicationTests {
 
 	@Test
 	fun should_return_combination_of_foo_bar_qix(){
-		assertEquals("FooBar",fooBarQuixService.convertNumber(3*5*4));
-		assertEquals("FooQuix", fooBarQuixService.convertNumber(5*7*4));
-		assertEquals("FooBarQuix", fooBarQuixService.convertNumber(3*5*7*2));
+		assertEquals("FooBar",fooBarQuixService.convertNumber(3*5));
+		assertEquals("BarQuix", fooBarQuixService.convertNumber(5*7));
+		assertEquals("FooBarQuix", fooBarQuixService.convertNumber(3*5*7));
 	}
 }

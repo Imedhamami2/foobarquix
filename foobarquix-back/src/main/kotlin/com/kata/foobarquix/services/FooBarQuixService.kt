@@ -7,14 +7,18 @@ class FooBarQuixService {
     private val divisors = mapOf(3 to "Foo", 5 to "Bar", 7 to "Quix")
 
     fun convertNumber(inputNumber: Int): String {
+        val result = StringBuilder()
 
         for (key in divisors.keys) {
-            if (inputNumber % key == 0) {
-                return divisors[key].toString()
+            if (inputNumber % key == 0 ) {
+                result.append( divisors[key])
             }
         }
+        if(("").equals(result.toString())) return inputNumber.toString()
+        return result.toString()
 
-        return inputNumber.toString()
+
+
     }
 
 }
