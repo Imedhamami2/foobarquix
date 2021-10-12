@@ -14,6 +14,11 @@ class FooBarQuixService {
                 result.append( divisors[key])
             }
         }
+        val  numbers = inputNumber.toString().split("");
+        for( number in numbers){
+            if(number.equals("3")) return "Foo";
+        }
+
         if(isDivisible(result)) return inputNumber.toString()
         return result.toString()
 
