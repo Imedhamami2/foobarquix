@@ -11,25 +11,33 @@ class FooBarQuixService {
 
         val inputAsString: String = inputNumber.toString()
 
-        for (key in divisors.keys) {
-            if (inputNumber % key == 0 ) {
-                result.append( divisors[key])
-            }
-        }
+        divisible(inputNumber, result)
 
-        for (element in inputAsString) {
-            val digitAsString = element.toString()
-            val key = Integer.valueOf(digitAsString)
-            if (divisors.keys.contains(key)) {
-                result.append( divisors[key])
-            }
-        }
+        contains(inputAsString, result)
 
         if(isDivisible(result)) return inputNumber.toString()
         return result.toString()
 
 
 
+    }
+
+    private fun divisible(inputNumber: Int, result: StringBuilder) {
+        for (key in divisors.keys) {
+            if (inputNumber % key == 0) {
+                result.append(divisors[key])
+            }
+        }
+    }
+
+    private fun contains(inputAsString: String, result: StringBuilder) {
+        for (element in inputAsString) {
+            val digitAsString = element.toString()
+            val key = Integer.valueOf(digitAsString)
+            if (divisors.keys.contains(key)) {
+                result.append(divisors[key])
+            }
+        }
     }
 
     private fun isDivisible(result: StringBuilder) = ("").equals(result.toString())
