@@ -35,4 +35,11 @@ class FooBarQuixApplicationTests {
 	fun should_foo_when_input_is_divisible_by_7(){
 		assertEquals("Quix", fooBarQuixService.convertNumber(14));
 	}
+
+	@Test
+	fun should_return_combination_of_foo_bar_qix(){
+		assertEquals("FooBar",fooBarQuixService.convertNumber(3*5*4));
+		assertEquals("FooQuix", fooBarQuixService.convertNumber(5*7*4));
+		assertEquals("FooBarQuix", fooBarQuixService.convertNumber(3*5*7*2));
+	}
 }
