@@ -24,6 +24,7 @@ export class FooBarQuixFormComponent implements OnInit {
   }
 
   submitNumber(form): void {
+    this.submitNumberOutput.emit(form.inputNumber);
   }
   
   getErrorInput() {
