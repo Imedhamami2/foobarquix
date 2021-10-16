@@ -1,3 +1,12 @@
 <div class="container"> 
-    To Be Completed
+    <form [formGroup]="fooBarQuixForm" (ngSubmit)="submitNumber(fooBarQuixForm.value)">
+        <div class="form-group">
+          <label>Number to convert</label>
+          <input type="text" class="form-control" id="inputNumber" formControlName="inputNumber" placeholder="inputNumber">
+            <span style="color: red;" *ngIf="!fooBarQuixForm.controls['inputNumber'].valid && fooBarQuixForm.controls['inputNumber'].touched">
+                {{ getErrorInput() }}
+            </span>
+        </div>
+        <button type="submit" [disabled]="!fooBarQuixForm.valid" class="btn btn-primary">Convert</button>
+      </form>
 </div>

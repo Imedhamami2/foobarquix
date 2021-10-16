@@ -6,16 +6,32 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './foo-bar-quix-form.component.html'
 })
 export class FooBarQuixFormComponent implements OnInit {
+  @Output() submitNumberOutput = new EventEmitter<number>();
+  fooBarQuixForm: FormGroup;
+  numberRegEx = /^[1-9]\d*$/;
 
-
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
 
   }
 
   ngOnInit(): void {
+    this.fooBarQuixForm = this.formBuilder.group({
+      inputNumber: [
+        null,
+        [Validators.required, Validators.pattern(this.numberRegEx)],
+      ],
+    });
   }
 
-  submitNumber(): void {
+  submitNumber(form): void {
+  }
+  
+  getErrorInput() {
+    return this.fooBarQuixForm.get('inputNumber').hasError('required')
+      ? 'Field is required'
+      : this.fooBarQuixForm.get('inputNumber').hasError('pattern')
+      ? 'Not a valid number'
+      : '';
   }
 
 }
