@@ -7,6 +7,7 @@ import { FooBarQuixService } from '../foo-bar-quix.service';
   templateUrl: './foo-bar-quix.component.html'
 })
 export class FooBarQuixComponent implements OnInit, OnDestroy {
+  results: NumberConverted[] = [];
 
   constructor(private fooBarQuixService: FooBarQuixService) { }
 
@@ -17,6 +18,9 @@ export class FooBarQuixComponent implements OnInit, OnDestroy {
   }
 
   convertNumber(inputNumber: number): void {
+    this.fooBarQuixService.convertNumber(inputNumber).subscribe((data) => {
+      this.results.push({ numberToConvert: inputNumber, result: data.result });
+    });
   }
 
 }
